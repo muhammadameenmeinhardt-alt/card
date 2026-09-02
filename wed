@@ -1,0 +1,1315 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>Wedding Invitation - Tehreem Fatima</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=DM+Sans:wght@400;500;600;700&display=swap');
+
+    :root {
+      --white: #fffdfb;
+      --pink: #f5b8c9;
+      --pink-deep: #c86d91;
+      --blue: #a8d9e8;
+      --blue-deep: #4d9bb6;
+      --gold: #eecf85;
+      --gold-light: #ddb768;
+      --gold-deep: #a97a2b;
+      --ink: #384655;
+      --muted: #71808b;
+      --line: rgba(77, 155, 182, 0.24);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    html {
+      -webkit-text-size-adjust: 100%;
+    }
+
+    body {
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      text-rendering: optimizeLegibility;
+    }
+
+    body {
+      min-height: 100vh;
+      overflow-x: hidden;
+      color: var(--ink);
+      font-family: "DM Sans", sans-serif;
+      background:
+        radial-gradient(circle at 9% 10%, rgba(245, 184, 201, 0.48), transparent 28%),
+        radial-gradient(circle at 92% 14%, rgba(168, 217, 232, 0.58), transparent 30%),
+        linear-gradient(145deg, #fffdfb 0%, #f7fbfb 48%, #fff4f7 100%);
+    }
+
+    body::before {
+      position: fixed;
+      inset: 0;
+      z-index: -1;
+      opacity: 0.24;
+      pointer-events: none;
+      content: "";
+      background-image: radial-gradient(rgba(56, 70, 85, 0.18) 0.7px, transparent 0.7px);
+      background-size: 9px 9px;
+      mask-image: linear-gradient(to bottom, black, transparent 78%);
+    }
+
+    body:not(.opened) {
+      overflow: hidden;
+      height: 100vh;
+    }
+
+    .page {
+      position: relative;
+      width: min(100%, 560px);
+      min-height: 100vh;
+      margin: auto;
+      padding: 20px 18px 38px;
+    }
+
+    .orb {
+      position: absolute;
+      border-radius: 50%;
+      filter: blur(1px);
+      pointer-events: none;
+      animation: float 7s ease-in-out infinite;
+    }
+
+    .orb-one {
+      top: 145px;
+      left: -26px;
+      width: 70px;
+      height: 70px;
+      background: rgba(245, 184, 201, 0.4);
+    }
+
+    .orb-two {
+      top: 390px;
+      right: -24px;
+      width: 86px;
+      height: 86px;
+      background: rgba(168, 217, 232, 0.4);
+      animation-delay: -2s;
+    }
+
+    /* --- Scroll-reveal system (used by hero + every section) --- */
+
+    .reveal {
+      opacity: 0;
+      transform: translateY(26px) scale(0.98);
+      transition: opacity 0.85s cubic-bezier(0.22, 1, 0.36, 1), transform 0.85s cubic-bezier(0.22, 1, 0.36, 1);
+      will-change: opacity, transform;
+    }
+
+    .reveal.in-view {
+      opacity: 1;
+      transform: translateY(0) scale(1);
+    }
+
+    body:not(.opened) .reveal {
+      opacity: 0 !important;
+      transform: translateY(26px) scale(0.98) !important;
+      transition: none !important;
+    }
+
+    .hero {
+      position: relative;
+      min-height: min(610px, 84vh);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      overflow: hidden;
+      padding: 58px 20px 45px;
+      text-align: center;
+      border: 1px solid rgba(255, 255, 255, 0.8);
+      border-radius: 34px;
+      box-shadow: 0 22px 55px rgba(90, 122, 137, 0.13);
+      background: rgba(255, 255, 255, 0.68);
+      backdrop-filter: blur(12px);
+    }
+
+    .hero::before,
+    .hero::after {
+      position: absolute;
+      width: 170px;
+      height: 170px;
+      content: "";
+      border: 1px solid rgba(200, 109, 145, 0.35);
+      border-radius: 50%;
+      animation: spin 22s linear infinite;
+    }
+
+    .hero::before {
+      top: -92px;
+      left: -78px;
+    }
+
+    .hero::after {
+      right: -82px;
+      bottom: -90px;
+      border-color: rgba(77, 155, 182, 0.35);
+      animation-direction: reverse;
+    }
+
+    .eyebrow {
+      color: var(--blue-deep);
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 0.28em;
+      text-transform: uppercase;
+    }
+
+    .floral-mark {
+      position: relative;
+      width: 92px;
+      height: 75px;
+      margin: 28px 0 14px;
+      animation: bloom 1s 0.2s ease both;
+    }
+
+    .petal {
+      position: absolute;
+      width: 38px;
+      height: 54px;
+      border-radius: 70% 30% 70% 30%;
+      background: linear-gradient(145deg, #f9d8e2, #d986a5);
+      transform-origin: bottom center;
+    }
+
+    .petal:nth-child(1) { left: 27px; top: 0; transform: rotate(0deg); }
+    .petal:nth-child(2) { left: 2px; top: 17px; transform: rotate(-55deg) scale(0.82); }
+    .petal:nth-child(3) { right: 2px; top: 17px; transform: rotate(55deg) scale(0.82); }
+    .petal:nth-child(4) {
+      left: 34px;
+      top: 30px;
+      width: 24px;
+      height: 31px;
+      background: linear-gradient(145deg, #a8d9e8, #5fa9c0);
+      transform: rotate(180deg);
+    }
+
+    .petal-center {
+      position: absolute;
+      left: 42px;
+      top: 37px;
+      width: 13px;
+      height: 13px;
+      border-radius: 50%;
+      background: #fff5bf;
+      box-shadow: 0 0 0 5px rgba(255, 245, 191, 0.35);
+    }
+
+    h1 {
+      max-width: 390px;
+      color: var(--ink);
+      font-family: "Cormorant Garamond", serif;
+      font-size: clamp(46px, 15vw, 78px);
+      font-weight: 600;
+      line-height: 0.85;
+      letter-spacing: -0.045em;
+    }
+
+    .invitation-copy {
+      max-width: 300px;
+      margin-top: 23px;
+      color: var(--muted);
+      font-family: "Cormorant Garamond", serif;
+      font-size: clamp(18px, 5vw, 22px);
+      line-height: 1.15;
+    }
+
+    .date-card {
+      display: flex;
+      align-items: center;
+      gap: 17px;
+      margin-top: 31px;
+      padding: 13px 24px;
+      border-top: 1px solid var(--line);
+      border-bottom: 1px solid var(--line);
+    }
+
+    .date-card strong {
+      color: var(--pink-deep);
+      font-family: "Cormorant Garamond", serif;
+      font-size: 34px;
+      line-height: 1;
+    }
+
+    .date-card span {
+      color: var(--muted);
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+    }
+
+    .scroll-cue {
+      position: absolute;
+      bottom: 14px;
+      left: 50%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 4px;
+      color: var(--blue-deep);
+      font-size: 9px;
+      font-weight: 700;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      transform: translateX(-50%);
+      animation: bob 1.8s ease-in-out infinite;
+      opacity: 0.85;
+    }
+
+    .scroll-cue svg {
+      width: 14px;
+      height: 14px;
+    }
+
+    .section {
+      margin-top: 18px;
+      padding: 29px 22px;
+      text-align: center;
+      border: 1px solid rgba(255, 255, 255, 0.88);
+      border-radius: 28px;
+      box-shadow: 0 14px 38px rgba(90, 122, 137, 0.09);
+      background: rgba(255, 255, 255, 0.68);
+      backdrop-filter: blur(10px);
+    }
+
+    .section-label {
+      margin-bottom: 18px;
+      color: var(--blue-deep);
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 0.24em;
+      text-transform: uppercase;
+    }
+
+    .names {
+      display: grid;
+      gap: 17px;
+    }
+
+    .name-block {
+      padding: 18px 14px;
+      border-radius: 20px;
+      background: linear-gradient(135deg, rgba(245, 184, 201, 0.24), rgba(168, 217, 232, 0.19));
+    }
+
+    .role-label {
+      margin-bottom: 6px;
+      color: var(--pink-deep);
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 0.24em;
+      text-transform: uppercase;
+    }
+
+    .name-block h2 {
+      color: var(--gold-deep);
+      font-family: "Cormorant Garamond", serif;
+      font-size: clamp(24px, 7vw, 31px);
+      font-weight: 600;
+      line-height: 0.95;
+      text-shadow: 0 1px 0 rgba(255, 255, 255, 0.4);
+    }
+
+    .name-block p {
+      margin-top: 9px;
+      color: var(--muted);
+      font-size: 12px;
+      line-height: 1.35;
+    }
+
+    /* --- Couple portrait: round floral frame --- */
+
+    .couple-frame {
+      position: relative;
+      width: clamp(200px, 58vw, 250px);
+      height: clamp(200px, 58vw, 250px);
+      margin: 6px auto 10px;
+      border-radius: 50%;
+      background: radial-gradient(circle at 50% 42%, #fff8f3 0%, #fbe6ee 68%, #f3d3de 100%);
+      box-shadow: 0 16px 30px rgba(120, 40, 70, 0.18), inset 0 0 0 2px rgba(238, 207, 133, 0.55);
+    }
+
+    .frame-flower {
+      position: absolute;
+      inset: 0;
+      transform: rotate(var(--a));
+      pointer-events: none;
+    }
+
+    .frame-flower span {
+      position: absolute;
+      top: 3%;
+      left: 50%;
+      transform: translate(-50%, 0) rotate(calc(-1 * var(--a)));
+      font-size: 14px;
+      color: var(--gold-deep);
+    }
+
+    .couple-frame-inner {
+      position: absolute;
+      inset: 15%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .couple-frame-inner svg {
+      width: 100%;
+      height: 100%;
+      filter: drop-shadow(0 6px 10px rgba(120, 40, 70, 0.18));
+    }
+
+    .portrait-names {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 18px;
+      margin-top: 6px;
+    }
+
+    .portrait-name {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 5px;
+    }
+
+    .portrait-name p {
+      color: var(--gold-deep);
+      font-family: "Cormorant Garamond", serif;
+      font-size: clamp(18px, 5vw, 23px);
+      font-weight: 600;
+    }
+
+    .portrait-amp {
+      color: var(--pink-deep);
+      font-family: "Cormorant Garamond", serif;
+      font-size: 22px;
+    }
+
+    .venue-name {
+      color: var(--ink);
+      font-family: "Cormorant Garamond", serif;
+      font-size: clamp(27px, 8vw, 35px);
+      font-weight: 600;
+    }
+
+    .address {
+      max-width: 300px;
+      margin: 9px auto 20px;
+      color: var(--muted);
+      font-size: 13px;
+      line-height: 1.55;
+    }
+
+    .action {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 47px;
+      padding: 0 23px;
+      color: #fff;
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-decoration: none;
+      text-transform: uppercase;
+      border-radius: 999px;
+      background: linear-gradient(100deg, var(--pink-deep), var(--blue-deep));
+      box-shadow: 0 9px 20px rgba(77, 155, 182, 0.23);
+      transition: transform 0.25s ease, box-shadow 0.25s ease;
+      animation: pulse 2.8s ease-in-out infinite;
+      touch-action: manipulation;
+    }
+
+    .action:hover,
+    .action:focus-visible {
+      transform: translateY(-4px) scale(1.025);
+      box-shadow: 0 14px 28px rgba(77, 155, 182, 0.32);
+      outline: none;
+    }
+
+    .contact {
+      padding-bottom: 8px;
+      color: var(--muted);
+      font-size: 13px;
+      line-height: 1.6;
+    }
+
+    .contact strong {
+      display: block;
+      color: var(--ink);
+      font-family: "Cormorant Garamond", serif;
+      font-size: clamp(22px, 7vw, 29px);
+      font-weight: 600;
+    }
+
+    .contact a {
+      color: var(--blue-deep);
+      font-weight: 700;
+      text-decoration: none;
+    }
+
+    .footer {
+      padding: 25px 0 0;
+      color: var(--pink-deep);
+      font-family: "Cormorant Garamond", serif;
+      font-size: 19px;
+      text-align: center;
+    }
+
+    @keyframes bloom {
+      from { opacity: 0; transform: scale(0.55) rotate(-12deg); }
+      to { opacity: 1; transform: scale(1) rotate(0); }
+    }
+
+    @keyframes float {
+      0%, 100% { transform: translateY(0) rotate(0); }
+      50% { transform: translateY(-15px) rotate(8deg); }
+    }
+
+    @keyframes spin {
+      to { transform: rotate(360deg); }
+    }
+
+    @keyframes pulse {
+      0%, 100% { box-shadow: 0 9px 20px rgba(77, 155, 182, 0.23); }
+      50% { box-shadow: 0 9px 27px rgba(200, 109, 145, 0.38); }
+    }
+
+    @keyframes bob {
+      0%, 100% { transform: translate(-50%, 0); }
+      50% { transform: translate(-50%, 6px); }
+    }
+
+    /* --- Curtain intro --- */
+
+    .curtain-overlay {
+      position: fixed;
+      inset: 0;
+      z-index: 999;
+      cursor: pointer;
+      overflow: hidden;
+      transition: opacity 0.9s ease, transform 0.9s ease, filter 0.9s ease;
+      will-change: opacity, transform, filter;
+    }
+
+    .curtain-overlay.advance {
+      opacity: 0;
+      transform: scale(1.06);
+      filter: blur(6px);
+      pointer-events: none;
+    }
+
+    .curtain-stage {
+      position: absolute;
+      inset: 0;
+      z-index: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0 30px;
+      text-align: center;
+      background: radial-gradient(circle at 50% 42%, #fff6f2 0%, #fbe4ea 55%, #f3cfda 100%);
+    }
+
+    .curtain-stage-names {
+      opacity: 0;
+      transform: translateY(18px) scale(0.96);
+      transition: opacity 0.8s ease, transform 0.8s ease;
+    }
+
+    .curtain-stage-names.show {
+      opacity: 1;
+      transform: translateY(0) scale(1);
+    }
+
+    .stage-tagline {
+      color: var(--blue-deep);
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+    }
+
+    .stage-title {
+      margin-top: 12px;
+      font-family: "Cormorant Garamond", serif;
+      font-size: clamp(32px, 11vw, 46px);
+      font-weight: 600;
+      line-height: 1.05;
+      background: linear-gradient(100deg, #a97a2b 0%, #f8ecc8 26%, #ddb768 52%, #f8ecc8 76%, #a97a2b 100%);
+      background-size: 240% auto;
+      background-position: 0% 50%;
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: var(--gold-light);
+      -webkit-text-fill-color: transparent;
+      animation: shine 3.4s linear infinite;
+    }
+
+    .stage-title .amp {
+      margin: 0 6px;
+      color: var(--pink-deep);
+      -webkit-text-fill-color: var(--pink-deep);
+    }
+
+    .stage-title .role-tag {
+      display: inline-block;
+      margin-right: 4px;
+      font-size: 0.4em;
+      font-weight: 700;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      vertical-align: middle;
+      color: var(--pink-deep);
+      -webkit-text-fill-color: var(--pink-deep);
+    }
+
+    .stage-date {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      margin-top: 16px;
+      padding: 8px 20px;
+      color: var(--gold-deep);
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      border: 1px solid rgba(169, 122, 43, 0.4);
+      border-radius: 999px;
+      background: rgba(255, 246, 220, 0.65);
+    }
+
+    @keyframes shine {
+      to { background-position: -240% 50%; }
+    }
+
+    .curtain-panel {
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      z-index: 3;
+      width: 53%;
+      overflow: hidden;
+      background:
+        repeating-linear-gradient(90deg, rgba(255, 255, 255, 0.16) 0 9px, rgba(120, 40, 70, 0.1) 9px 21px),
+        linear-gradient(180deg, #fbdbe6 0%, #ec9dbb 45%, #c86d91 100%);
+      box-shadow: inset 0 0 60px rgba(120, 40, 70, 0.28);
+      transform-origin: top center;
+      will-change: transform;
+    }
+
+    .curtain-left {
+      left: 0;
+      border-radius: 0 22px 22px 0;
+      transform: translateX(0);
+    }
+
+    .curtain-right {
+      right: 0;
+      border-radius: 22px 0 0 22px;
+      transform: translateX(0);
+    }
+
+    .curtain-overlay.open .curtain-left {
+      animation: curtainDrawLeft 1.4s cubic-bezier(0.6, 0, 0.35, 1) forwards;
+    }
+
+    .curtain-overlay.open .curtain-right {
+      animation: curtainDrawRight 1.4s cubic-bezier(0.6, 0, 0.35, 1) forwards;
+    }
+
+    @keyframes curtainDrawLeft {
+      0% { transform: translateX(0) rotate(0deg); }
+      16% { transform: translateX(-3%) rotate(-1.4deg); }
+      38% { transform: translateX(-1.5%) rotate(0.8deg); }
+      100% { transform: translateX(-106%) rotate(-0.6deg); }
+    }
+
+    @keyframes curtainDrawRight {
+      0% { transform: translateX(0) rotate(0deg); }
+      16% { transform: translateX(3%) rotate(1.4deg); }
+      38% { transform: translateX(1.5%) rotate(-0.8deg); }
+      100% { transform: translateX(106%) rotate(0.6deg); }
+    }
+
+    .curtain-valance {
+      position: absolute;
+      top: 0;
+      z-index: 5;
+      width: 53%;
+      height: 17%;
+      min-height: 52px;
+      max-height: 96px;
+      background: linear-gradient(180deg, #f6c3d5 0%, #dd85a6 65%, #c86d91 100%);
+      box-shadow: inset 0 -10px 16px rgba(120, 40, 70, 0.3), 0 6px 12px rgba(120, 40, 70, 0.18);
+      border-radius: 0 0 55% 45% / 0 0 46px 46px;
+    }
+
+    .curtain-valance::after {
+      content: "";
+      position: absolute;
+      left: 6%;
+      right: 6%;
+      bottom: -7px;
+      height: 12px;
+      background-image: repeating-linear-gradient(115deg, var(--gold) 0 5px, transparent 5px 11px);
+      opacity: 0.9;
+    }
+
+    .curtain-valance-left {
+      left: 0;
+      border-radius: 0 0 60% 40px 0;
+    }
+
+    .curtain-valance-right {
+      right: 0;
+      border-radius: 0 0 40px 60% 0;
+      transform: scaleX(-1);
+    }
+
+    .curtain-valance-right::after {
+      transform: scaleX(-1);
+    }
+
+    .curtain-tieback {
+      position: absolute;
+      top: 44%;
+      z-index: 7;
+      width: 12px;
+      height: 72px;
+      opacity: 0;
+      transform: scale(0.6);
+      transition: opacity 0.6s ease 0.5s, transform 0.6s ease 0.5s;
+      pointer-events: none;
+      will-change: opacity, transform;
+    }
+
+    .curtain-tieback::before {
+      content: "";
+      position: absolute;
+      left: 50%;
+      top: 0;
+      width: 3px;
+      height: 100%;
+      background: linear-gradient(180deg, var(--gold), var(--gold-deep));
+      border-radius: 3px;
+      transform: translateX(-50%);
+    }
+
+    .curtain-tieback::after {
+      content: "";
+      position: absolute;
+      left: 50%;
+      bottom: -6px;
+      width: 17px;
+      height: 17px;
+      border-radius: 50%;
+      background: radial-gradient(circle at 35% 30%, #fff3cf, var(--gold-deep) 72%);
+      box-shadow: 0 3px 7px rgba(0, 0, 0, 0.25);
+      transform: translateX(-50%);
+    }
+
+    .curtain-tieback-left {
+      left: 5%;
+    }
+
+    .curtain-tieback-right {
+      right: 5%;
+    }
+
+    .curtain-overlay.open .curtain-tieback {
+      opacity: 1;
+      transform: scale(1);
+    }
+
+    .curtain-flower {
+      position: absolute;
+      z-index: 2;
+      color: #fff4f8;
+      text-shadow: 0 2px 6px rgba(120, 40, 70, 0.35);
+      pointer-events: none;
+    }
+
+    .curtain-light {
+      position: absolute;
+      z-index: 2;
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: radial-gradient(circle, #fff8d8, #f3cf6a 60%, transparent 72%);
+      box-shadow: 0 0 9px 3px rgba(255, 226, 140, 0.85);
+      animation: twinkle 2.6s ease-in-out infinite;
+      pointer-events: none;
+    }
+
+    .curtain-rod {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 6;
+      height: 12px;
+      background: linear-gradient(90deg, #b8903f, #f1d98b 50%, #b8903f);
+      box-shadow: 0 3px 8px rgba(0, 0, 0, 0.25);
+    }
+
+    .curtain-hint {
+      position: absolute;
+      left: 50%;
+      bottom: 9%;
+      z-index: 7;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 6px;
+      color: #fff;
+      text-align: center;
+      text-shadow: 0 2px 10px rgba(90, 30, 55, 0.35);
+      transform: translateX(-50%);
+      transition: opacity 0.35s ease;
+      pointer-events: none;
+    }
+
+    .curtain-hint.fade {
+      opacity: 0;
+    }
+
+    .curtain-hint.on-stage {
+      color: var(--ink);
+      text-shadow: 0 1px 3px rgba(255, 255, 255, 0.75);
+    }
+
+    .curtain-hint .tap-icon {
+      font-size: 24px;
+      animation: pulse-hint 2.2s ease-in-out infinite;
+    }
+
+    .curtain-hint .tap-label {
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      animation: pulse-hint 2.2s ease-in-out infinite;
+    }
+
+    @keyframes twinkle {
+      0%, 100% { opacity: 0.35; transform: scale(0.8); }
+      50% { opacity: 1; transform: scale(1.15); }
+    }
+
+    @keyframes pulse-hint {
+      0%, 100% { opacity: 0.55; }
+      50% { opacity: 1; }
+    }
+
+    /* --- Falling flower & snow sprinkles --- */
+
+    .sprinkle-layer {
+      position: fixed;
+      inset: 0;
+      z-index: 1500;
+      overflow: hidden;
+      pointer-events: none;
+      contain: layout style paint;
+    }
+
+    .sprinkle {
+      position: absolute;
+      top: -12vh;
+      left: var(--left, 50%);
+      font-size: var(--size, 16px);
+      line-height: 1;
+      color: var(--tint, var(--pink-deep));
+      opacity: 0;
+      animation: sprinkle-fall var(--dur, 10s) linear var(--delay, 0s) infinite;
+      will-change: transform, opacity;
+    }
+
+    .sprinkle.is-snow {
+      color: #dff1f7;
+      text-shadow: 0 0 5px rgba(168, 217, 232, 0.9);
+    }
+
+    @keyframes sprinkle-fall {
+      0% { transform: translateY(0) translateX(0) rotate(0deg); opacity: 0; }
+      6% { opacity: 1; }
+      92% { opacity: 1; }
+      100% { transform: translateY(124vh) translateX(var(--drift, 30px)) rotate(var(--rot, 320deg)); opacity: 0; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .sprinkle-layer {
+        display: none !important;
+      }
+    }
+
+    /* --- Mobile tightening --- */
+
+    @media (max-width: 400px) {
+      .page {
+        padding: 16px 14px 30px;
+      }
+
+      .hero {
+        padding: 46px 16px 38px;
+      }
+
+      .date-card {
+        gap: 12px;
+        padding: 12px 16px;
+      }
+
+      .section {
+        padding: 24px 16px;
+      }
+
+      .action {
+        padding: 0 18px;
+        font-size: 11px;
+      }
+
+      .contact strong {
+        font-size: 24px;
+      }
+
+      .portrait-names {
+        gap: 12px;
+      }
+
+      .portrait-name p {
+        font-size: 17px;
+      }
+
+      .portrait-amp {
+        font-size: 18px;
+      }
+    }
+
+    @media (max-height: 620px) {
+      .hero {
+        min-height: auto;
+        padding: 38px 18px 30px;
+      }
+
+      .floral-mark {
+        margin: 18px 0 10px;
+        transform: scale(0.85);
+      }
+
+      .curtain-valance {
+        min-height: 40px;
+        height: 14%;
+      }
+
+      .curtain-tieback {
+        height: 52px;
+      }
+
+      .stage-date {
+        margin-top: 10px;
+        padding: 6px 16px;
+      }
+    }
+
+    @media (max-width: 400px) {
+      .curtain-stage {
+        padding: 0 18px;
+      }
+
+      .stage-tagline {
+        font-size: 10px;
+      }
+
+      .stage-date {
+        font-size: 10px;
+        padding: 7px 14px;
+        gap: 6px;
+      }
+
+      .curtain-tieback {
+        width: 10px;
+        height: 58px;
+      }
+
+      .curtain-tieback-left {
+        left: 3%;
+      }
+
+      .curtain-tieback-right {
+        right: 3%;
+      }
+
+      .curtain-hint {
+        bottom: 6%;
+      }
+
+      .curtain-hint .tap-label {
+        font-size: 9.5px;
+        letter-spacing: 0.16em;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      *,
+      *::before,
+      *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        scroll-behavior: auto !important;
+      }
+
+      .reveal {
+        transition: none !important;
+      }
+
+      .curtain-overlay,
+      .curtain-panel,
+      .curtain-stage-names,
+      .curtain-hint,
+      .curtain-tieback,
+      .stage-title {
+        transition: none !important;
+        animation: none !important;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="curtain-overlay" id="curtainOverlay" role="button" tabindex="0" aria-label="Open the curtains to reveal the invitation">
+    <div class="curtain-stage">
+      <div class="curtain-stage-names" id="stageNames">
+        <p class="stage-tagline">You are invited to the wedding of</p>
+        <h2 class="stage-title"><span class="role-tag">Bride</span> Tehreem <span class="amp">&amp;</span> <span class="role-tag">Groom</span> Fasih</h2>
+        <p class="stage-date">Save the Date &bull; 22 October 2026</p>
+      </div>
+    </div>
+    <div class="curtain-panel curtain-left" id="curtainLeft"></div>
+    <div class="curtain-panel curtain-right" id="curtainRight"></div>
+    <div class="curtain-valance curtain-valance-left"></div>
+    <div class="curtain-valance curtain-valance-right"></div>
+    <div class="curtain-tieback curtain-tieback-left"></div>
+    <div class="curtain-tieback curtain-tieback-right"></div>
+    <div class="curtain-rod"></div>
+    <div class="curtain-hint" id="curtainHint">
+      <span class="tap-icon" aria-hidden="true">&#10022;</span>
+      <span class="tap-label">Tap to begin</span>
+    </div>
+  </div>
+
+  <main class="page">
+    <div class="orb orb-one"></div>
+    <div class="orb orb-two"></div>
+
+    <section class="hero reveal">
+      <p class="eyebrow">A beautiful beginning</p>
+
+      <div class="floral-mark" aria-hidden="true">
+        <span class="petal"></span>
+        <span class="petal"></span>
+        <span class="petal"></span>
+        <span class="petal"></span>
+        <span class="petal-center"></span>
+      </div>
+
+      <h1>Wedding<br>Invitation</h1>
+
+      <p class="invitation-copy">
+        With the blessings of our families, we invite you to celebrate a day filled with love and joy.
+      </p>
+
+      <div class="date-card">
+        <strong>22</strong>
+        <span>October<br>2026</span>
+      </div>
+
+      <div class="scroll-cue" aria-hidden="true">
+        <span>Scroll</span>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M6 9l6 6 6-6"></path>
+        </svg>
+      </div>
+    </section>
+
+    <section class="section reveal">
+      <p class="section-label">A beautiful pair</p>
+
+      <div class="couple-frame" role="img" aria-label="Illustration of the bride and groom dancing inside a floral frame">
+        <div class="frame-flower" style="--a: 0deg"><span>&#10064;</span></div>
+        <div class="frame-flower" style="--a: 30deg"><span>&#8226;</span></div>
+        <div class="frame-flower" style="--a: 60deg"><span>&#10064;</span></div>
+        <div class="frame-flower" style="--a: 90deg"><span>&#8226;</span></div>
+        <div class="frame-flower" style="--a: 120deg"><span>&#10064;</span></div>
+        <div class="frame-flower" style="--a: 150deg"><span>&#8226;</span></div>
+        <div class="frame-flower" style="--a: 180deg"><span>&#10064;</span></div>
+        <div class="frame-flower" style="--a: 210deg"><span>&#8226;</span></div>
+        <div class="frame-flower" style="--a: 240deg"><span>&#10064;</span></div>
+        <div class="frame-flower" style="--a: 270deg"><span>&#8226;</span></div>
+        <div class="frame-flower" style="--a: 300deg"><span>&#10064;</span></div>
+        <div class="frame-flower" style="--a: 330deg"><span>&#8226;</span></div>
+
+        <div class="couple-frame-inner">
+          <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+            <defs>
+              <linearGradient id="groomGrad" x1="0" y1="0" x2="1" y2="1">
+                <stop offset="0%" stop-color="#384655" />
+                <stop offset="100%" stop-color="#c86d91" />
+              </linearGradient>
+              <linearGradient id="brideGrad" x1="0" y1="0" x2="1" y2="1">
+                <stop offset="0%" stop-color="#c86d91" />
+                <stop offset="100%" stop-color="#eecf85" />
+              </linearGradient>
+            </defs>
+
+            <circle cx="78" cy="62" r="12" fill="url(#groomGrad)" />
+            <path d="M62,72 C55,90 58,115 72,128 C82,136 96,132 100,120 C103,110 98,100 90,96 C95,86 92,74 82,70 C78,68 68,66 62,72 Z" fill="url(#groomGrad)" />
+
+            <circle cx="118" cy="58" r="11" fill="url(#brideGrad)" />
+            <path d="M104,68 C90,90 78,120 82,145 C86,160 110,168 135,155 C150,147 152,125 140,110 C148,100 146,84 132,72 C126,66 112,62 104,68 Z" fill="url(#brideGrad)" />
+
+            <circle cx="142" cy="150" r="4" fill="#eecf85" />
+            <circle cx="150" cy="160" r="3" fill="#eecf85" />
+            <circle cx="157" cy="168" r="2.2" fill="#eecf85" />
+            <circle cx="163" cy="175" r="1.6" fill="#eecf85" />
+          </svg>
+        </div>
+      </div>
+
+      <div class="portrait-names">
+        <div class="portrait-name">
+          <span class="role-label">Groom</span>
+          <p>Fasih</p>
+        </div>
+        <span class="portrait-amp">&amp;</span>
+        <div class="portrait-name">
+          <span class="role-label">Bride</span>
+          <p>Tehreem</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section reveal">
+      <p class="section-label">The couple</p>
+
+      <div class="names">
+        <article class="name-block">
+          <p class="role-label">Bride</p>
+          <h2>Tehreem Fatima</h2>
+          <p>Daughter of Abdul Mateen</p>
+        </article>
+
+        <article class="name-block">
+          <p class="role-label">Groom</p>
+          <h2>Muhammad Fasih Khan</h2>
+          <p>Son of Muhammad Sabir</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="section reveal">
+      <p class="section-label">Celebration venue</p>
+      <h2 class="venue-name">Jasmine Banquet</h2>
+      <p class="address">
+        C 16, Federal B Area Block 13,<br>
+        Gulberg Town, Karachi, Pakistan
+      </p>
+
+      <a
+        class="action"
+        href="https://maps.app.goo.gl/y2Qw84YKc8PbwKih9"
+        target="_blank"
+        rel="noopener noreferrer"
+        aria-label="Open Jasmine Banquet location in Google Maps"
+      >
+        Open map location
+      </a>
+    </section>
+
+    <section class="section contact reveal">
+      <p class="section-label">For more information</p>
+      <strong>Muhammad Ameen</strong>
+      <a href="tel:+923172166788">03172166788</a>
+    </section>
+
+    <p class="footer reveal">We look forward to celebrating with you</p>
+  </main>
+
+  <script>
+    (function () {
+      var overlay = document.getElementById('curtainOverlay');
+      var curtainHint = document.getElementById('curtainHint');
+      var stageNames = document.getElementById('stageNames');
+      var curtainLeft = document.getElementById('curtainLeft');
+      var curtainRight = document.getElementById('curtainRight');
+      var reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      var stage = 'closed'; // closed -> open -> revealed
+      var scrollRevealStarted = false;
+      var sprinklesStarted = false;
+      var tapLabel = curtainHint.querySelector('.tap-label');
+
+      function startSprinkles() {
+        if (sprinklesStarted) return;
+        sprinklesStarted = true;
+
+        var layer = document.createElement('div');
+        layer.className = 'sprinkle-layer';
+        layer.setAttribute('aria-hidden', 'true');
+        document.body.appendChild(layer);
+
+        var flowerGlyphs = ['\u2740', '\u273F', '\u2741'];
+        var snowGlyph = '\u2744';
+        var tints = ['#f5b8c9', '#eecf85', '#c86d91', '#f9d8e2'];
+        var total = 26;
+
+        for (var i = 0; i < total; i++) {
+          var isSnow = i % 3 === 0;
+          var piece = document.createElement('span');
+          piece.className = 'sprinkle' + (isSnow ? ' is-snow' : '');
+          piece.textContent = isSnow ? snowGlyph : flowerGlyphs[Math.floor(Math.random() * flowerGlyphs.length)];
+
+          piece.style.setProperty('--left', (Math.random() * 100).toFixed(1) + '%');
+          piece.style.setProperty('--size', (12 + Math.random() * 14).toFixed(0) + 'px');
+          piece.style.setProperty('--dur', (8 + Math.random() * 9).toFixed(1) + 's');
+          piece.style.setProperty('--delay', (Math.random() * 10).toFixed(1) + 's');
+          piece.style.setProperty('--drift', (Math.random() * 60 - 30).toFixed(0) + 'px');
+          piece.style.setProperty('--rot', (200 + Math.random() * 400).toFixed(0) + 'deg');
+
+          if (!isSnow) {
+            piece.style.setProperty('--tint', tints[Math.floor(Math.random() * tints.length)]);
+          }
+
+          layer.appendChild(piece);
+        }
+      }
+
+      function decorateCurtain(panel) {
+        var flowerGlyphs = ['\u2740', '\u273F', '\u2741'];
+        var flowerCount = 6;
+        for (var i = 0; i < flowerCount; i++) {
+          var flower = document.createElement('span');
+          flower.className = 'curtain-flower';
+          flower.setAttribute('aria-hidden', 'true');
+          flower.style.left = (10 + Math.random() * 68) + '%';
+          flower.style.top = (8 + Math.random() * 80) + '%';
+          flower.style.fontSize = (16 + Math.random() * 16) + 'px';
+          flower.style.transform = 'rotate(' + (Math.random() * 40 - 20) + 'deg)';
+          flower.textContent = flowerGlyphs[Math.floor(Math.random() * flowerGlyphs.length)];
+          panel.appendChild(flower);
+        }
+
+        var lightCount = 8;
+        for (var j = 0; j < lightCount; j++) {
+          var light = document.createElement('span');
+          light.className = 'curtain-light';
+          light.setAttribute('aria-hidden', 'true');
+          light.style.left = (6 + Math.random() * 86) + '%';
+          light.style.top = (6 + Math.random() * 88) + '%';
+          light.style.animationDelay = (Math.random() * 2.6).toFixed(2) + 's';
+          panel.appendChild(light);
+        }
+      }
+
+      function initScrollReveal() {
+        if (scrollRevealStarted) return;
+        scrollRevealStarted = true;
+
+        var revealEls = document.querySelectorAll('.reveal');
+
+        if ('IntersectionObserver' in window) {
+          var io = new IntersectionObserver(function (entries) {
+            entries.forEach(function (entry) {
+              if (entry.isIntersecting) {
+                entry.target.classList.add('in-view');
+                io.unobserve(entry.target);
+              }
+            });
+          }, { threshold: 0.18 });
+
+          revealEls.forEach(function (el) { io.observe(el); });
+        } else {
+          revealEls.forEach(function (el) { el.classList.add('in-view'); });
+        }
+      }
+
+      function showProceedHint() {
+        tapLabel.textContent = 'Tap to view invitation';
+        curtainHint.classList.add('on-stage');
+        curtainHint.classList.remove('fade');
+        overlay.setAttribute('aria-label', 'Continue to the invitation');
+      }
+
+      function openCurtains() {
+        if (stage !== 'closed') return;
+        stage = 'open';
+
+        startSprinkles();
+        curtainHint.classList.add('fade');
+
+        if (reduceMotion) {
+          stageNames.classList.add('show');
+          showProceedHint();
+          return;
+        }
+
+        overlay.classList.add('open');
+
+        setTimeout(function () {
+          stageNames.classList.add('show');
+        }, 650);
+
+        setTimeout(function () {
+          showProceedHint();
+        }, 1500);
+      }
+
+      function revealInvitation() {
+        if (stage !== 'open') return;
+        stage = 'revealed';
+
+        curtainHint.classList.add('fade');
+        overlay.classList.add('advance');
+        document.body.classList.add('opened');
+        initScrollReveal();
+
+        setTimeout(function () {
+          overlay.style.display = 'none';
+        }, reduceMotion ? 0 : 950);
+      }
+
+      function handleActivate() {
+        if (stage === 'closed') {
+          openCurtains();
+        } else if (stage === 'open') {
+          revealInvitation();
+        }
+      }
+
+      decorateCurtain(curtainLeft);
+      decorateCurtain(curtainRight);
+
+      overlay.addEventListener('click', handleActivate);
+      overlay.addEventListener('keydown', function (e) {
+        if (e.key === 'Enter' || e.key === ' ') {
+          e.preventDefault();
+          handleActivate();
+        }
+      });
+    })();
+  </script>
+</body>
+</html>
